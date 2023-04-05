@@ -106,3 +106,8 @@ main{
     width: 56%;
     border-radius: 4%;
 }
+@media(min-width:350px) and (max-width:650px){
+    main{
+        font-family: sans-serif;
+    }
+}
