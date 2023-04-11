@@ -1,113 +1,154 @@
-:root{
-    --background-red-degrade:#e80e0e;
-    --white-degrade: #FFF;
-    --color-pokemon-data:#AAA;
-    --color-pokemon-name: #3A444D;
-    --border-color:#333;
-    --shadow-01-search:#888;
-    --shadow-02-search:#333;
-    --shadow-01-button:#222;
-    --shadow-02-button:#000;
-    --background-button: #444;
-    
+:root {
+  --background-red-degrade: #e80e0e;
+  --white-degrade: #fff;
+  --color-pokemon-data: #aaa;
+  --color-pokemon-name: #3a444d;
+  --border-color: #333;
+  --shadow-01-search: #888;
+  --shadow-02-search: #333;
+  --shadow-01-button: #222;
+  --shadow-02-button: #000;
+  --background-button: #444;
 }
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Oxanium', sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Oxanium', sans-serif;
 }
 
-body{
-    text-align: center;
-    background: linear-gradient(to bottom, var(--background-red-degrade), var(--white-degrade));
-    min-height: 100vh;
+body {
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    var(--background-red-degrade),
+    var(--white-degrade)
+  );
+  min-height: 100vh;
 }
-main{
-    display: inline-block;
-    margin-top: 2%;
-    padding: 15px;
-    position: relative;
+main {
+  display: inline-block;
+  margin-top: 2%;
+  padding: 15px;
+  position: relative;
 }
-.pokedex{
-   width: 100%;
-   max-width: 425px;
-}
-
-.pokemon-img{
-    position: absolute;
-    left: 30%;
-    bottom: 50%;
-    transform: translate(10%,0);
-    height: 18%;
-}
-.pokemon-data{
-    position:absolute;
-    font-weight: 600;
-    color:var(--color-pokemon-data) ;
-    top: 54.5%;
-    right: 27%; 
-    font-size: clamp(8px, 5vw, 25px);
-}
-.pokemon-name{
-    color: var(--color-pokemon-name);
-    text-transform: capitalize;
-
-}
-.form-search{
-    position: absolute;
-    width: 65%;
-    top: 65%;
-    left: 13.5%;
-}
-.input-search{
-    width: 100%;
-    padding: 5%;
-    outline: none;
-    border: 2px solid var(--border-color);
-    border-radius: 7px;
-    font-weight: 600;
-    color: var(--color-pokemon-name);
-    font-size: clamp(8px, 5vw, 1rem);
-    box-shadow: -3px 4px 0 var(--shadow-01-search),-5px 7px 0px var(--shadow-02-search);
-}
-.buttons{
-    position: absolute;
-    top: 83%;
-    left: 35%;
-    width: 65%;
-    transform: translate(-35%, 0) ;
-    display: flex;
-    gap: 3%;
-}
-.button{
-    width: 50%;
-    padding: 3%;
-    border: 2px solid var(--shadow-02-button);
-    border-radius: 5px;
-    font-size: clamp(8px, 5vw, 1rem);
-    color: white;
-    background-color: var(--background-button);
-    box-shadow: -3px 4px 0 var(--shadow-01-button) ,-5px 7px 0px  var(--shadow-02-button);
+.pokedex {
+  width: 100%;
+  max-width: 425px;
 }
 
-.button:active{
-    box-shadow: inset -4px 4px 0 var(--shadow-01-button);
-    font-size: 0.9rem;
+.pokemon-img {
+  position: absolute;
+  left: 30%;
+  bottom: 50%;
+  transform: translate(10%, 0);
+  height: 18%;
 }
-.error-pokemon-img{
-    position: absolute;
-    left: 30%;
-    bottom: 47%;
-    transform: translate(-21.4%,0);
-    height: 26%;
-    width: 56%;
-    border-radius: 4%;
+.pokemon-data {
+  position: absolute;
+  font-weight: 600;
+  color: var(--color-pokemon-data);
+  top: 54.5%;
+  right: 27%;
+  font-size: clamp(8px, 5vw, 25px);
 }
-@media(min-width:350px) and (max-width:650px){
-    main{
-        font-family: sans-serif;
-    }
+.pokemon-name {
+  color: var(--color-pokemon-name);
+  text-transform: capitalize;
+}
+.form-search {
+  position: absolute;
+  width: 65%;
+  top: 65%;
+  left: 13.5%;
+}
+.input-search {
+  width: 100%;
+  padding: 5%;
+  outline: none;
+  border: 2px solid var(--border-color);
+  border-radius: 7px;
+  font-weight: 600;
+  color: var(--color-pokemon-name);
+  font-size: clamp(8px, 5vw, 1rem);
+  box-shadow: -3px 4px 0 var(--shadow-01-search),
+    -5px 7px 0px var(--shadow-02-search);
+}
+.buttons {
+  position: absolute;
+  top: 83%;
+  left: 35%;
+  width: 65%;
+  transform: translate(-35%, 0);
+  display: flex;
+  gap: 3%;
+}
+.button {
+  width: 50%;
+  padding: 3%;
+  border: 2px solid var(--shadow-02-button);
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 1rem);
+  color: white;
+  background-color: var(--background-button);
+  box-shadow: -3px 4px 0 var(--shadow-01-button),
+    -5px 7px 0px var(--shadow-02-button);
+}
+
+.button:active {
+  box-shadow: inset -4px 4px 0 var(--shadow-01-button);
+  font-size: 0.9rem;
+}
+.error-pokemon-img {
+  position: absolute;
+  left: 30%;
+  bottom: 47%;
+  transform: translate(-21.4%, 0);
+  height: 26%;
+  width: 56%;
+  border-radius: 4%;
+}
+.pokemon-img-rigth {
+  position: absolute;
+  width: 100%;
+  left: 95%;
+  height: 95%;
+}
+.build-team {
+  position: absolute;
+  width: 100%;
+  right: 110%;
+  top: 25%;
+}
+.normal-pokeball {
+  cursor: pointer;
+}
+.normal-pokeball:hover {
+  height: 200%;
+  transition: 0.5s;
+}
+.h1-pokeball {
+  position: absolute;
+  left: 20%;
+  bottom: 120%;
+}
+/*@font-face {
+    font-family:'pokemon';
+    src: url('fonts/pokemon.ttf') format('truetype');        tentando aplicar a fonte de pokemon gba                        
+    font-weight: normal;
+    font-style: normal;
+}*/
+h1 {
+  font-family: 'pokemon', sans-serif;
+}
+
+@media (min-width: 350px) and (max-width: 650px) {
+  main {
+    font-family: sans-serif;
+  }
+  .build-team {
+    display: none;
+  }
 }
