@@ -134,6 +134,52 @@ main {
   left: 20%;
   bottom: 120%;
 }
+.pokemon-type1{
+  position: absolute;
+  height: 5%;
+  width: 40%;
+  top: 25%;
+  right: -41%;
+  color: var(--color-pokemon-name);
+}
+.pokemon-type2{
+  position: absolute;
+  height: 5%;
+  width: 40%;
+  top: 25%;
+  right: -87%;
+  color: var(--color-pokemon-name);
+}
+.pokemon-height{
+  position: absolute;
+  height: 5%;
+  width: 40%;
+  
+  top: 30%;
+  right: -41%;
+}
+.pokemon-weight{
+  position: absolute;
+  height: 5%;
+  width: 40%;
+  top: 38%;
+  right: -41%;
+}
+.pokemon-sprite-9-front{
+  position: absolute;
+  height: 29%;
+  width: 40%;
+  top: 40%;
+  right: -42%;
+}
+.pokemon-sprite-9-back{
+  position: absolute;
+  height: 29%;
+  width: 40%;
+  top: 40%;
+  right: -85%;
+  
+}
 /*@font-face {
     font-family:'pokemon';
     src: url('fonts/pokemon.ttf') format('truetype');        tentando aplicar a fonte de pokemon gba                        
