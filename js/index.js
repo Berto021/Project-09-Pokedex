@@ -38,7 +38,7 @@ const fetchPokemon = async (pokemon) => {
   }
 };
 
-const renderPokemon = async (pokemon) => {
+const renderPokemon = async pokemon => {
   // essa é a função principal, aqui vamos pegar o pokemon lá na api e retornar seus dados separados para o nosso sistema
 
   pokemonName.innerHTML = 'Loading...';
@@ -61,7 +61,7 @@ const renderPokemon = async (pokemon) => {
         'front_default'
       ]; 
     pokemonType1.innerHTML = data['types']['0']['type']['name']
-    pokemonType2.innerHTML = data['types']['1']['type']['name']
+    pokemonType2.innerHTML = data['types']?.['1']?.['type']?.['name']
 
     const pokeHeight = data.height
     const pokeWeight = data.weight
