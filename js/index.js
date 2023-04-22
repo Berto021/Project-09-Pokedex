@@ -39,13 +39,24 @@ const renderPokemon = async pokemon => {
   // essa é a função principal, aqui vamos pegar o pokemon lá na api e retornar seus dados separados para o nosso sistema
 
   pokemonName.innerHTML = 'Loading...';
-  pokemonNumber.innerHTML = ' ';
+  pokemonNumber.innerHTML = '';
   pokemonImg.src = '#';
+  pokemonType1.style.display = 'none'
+  pokemonType2.style.display = 'none'
+  pokemonHeight.style.display = 'none'
+  pokemonWeight.style.display = 'none'
+  pokemonSpriteFront.style.display = 'none'
+  pokemonSpriteBack.style.display = 'none'
   
 
 
   const data = await fetchPokemon(pokemon); 
   if (data) {
+    pokemonSpriteFront.style.display = 'block'
+    pokemonSpriteBack.style.display = 'block'
+    pokemonHeight.style.display = 'block'
+    pokemonWeight.style.display = 'block'
+    pokemonType1.style.display = 'block'
     pokemonType1.innerHTML = data['types']['0']['type']['name'] 
     pokemonName.innerHTML = data.name; 
     pokemonNumber.innerHTML = data.id;
