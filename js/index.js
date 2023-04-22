@@ -16,13 +16,10 @@ const pokemonWeight = document.querySelector('.pokemon-weight')
 const pokemonSpriteFront = document.querySelector('.pokemon-sprite-9-front')
 const pokemonSpriteBack = document.querySelector('.pokemon-sprite-9-back')
 
-function zeroLeft(num){
-  if(num<10){
-      return ('0.'+num)
-  }else{
-      return (num)
-  }
-}
+
+
+const divide = num => num / 10;
+
 
 var counterPokemon = 1; // essa variável é o contador da pokedex, como tem o valor 1, vai começar pelo pokemon 1, bulbasaur
 
@@ -44,29 +41,30 @@ const renderPokemon = async pokemon => {
   pokemonName.innerHTML = 'Loading...';
   pokemonNumber.innerHTML = ' ';
   pokemonImg.src = '#';
-  pokemonType1.innerHTML = ''
-  pokemonType2.innerHTML = ''
-  pokemonHeight.innerHTML = ''
-  pokemonWeight.innerHTML =''
-  pokemonSpriteFront.src = '#'
-  pokemonSpriteBack.src = '#'
+  
+
 
   const data = await fetchPokemon(pokemon); 
   if (data) {
+    pokemonType1.innerHTML = data['types']['0']['type']['name'] 
     pokemonName.innerHTML = data.name; 
     pokemonNumber.innerHTML = data.id;
     pokemonImg.setAttribute('src', '#'); 
-    pokemonImg.src =
-      data['sprites']['versions']['generation-v']['black-white']['animated'][
-        'front_default'
-      ]; 
-    pokemonType1.innerHTML = data['types']['0']['type']['name']
-    pokemonType2.innerHTML = data['types']?.['1']?.['type']?.['name']
+    pokemonImg.src = data.id < 650 ?
+    data['sprites']['versions']['generation-v']['black-white']['animated'][
+    'front_default']: data.id >= 650 ? data['sprites']['versions']['generation-vii']['ultra-sun-ultra-moon']['front_default']:
 
+a
+       
+    if(data['types']['1'] != undefined){
+       pokemonType2.innerHTML = data['types']['1']['type']['name']
+       pokemonType2.style.display = 'block'
+   }else  pokemonType2.style.display = 'none'
     const pokeHeight = data.height
     const pokeWeight = data.weight
-    pokemonHeight.innerHTML = zeroLeft(pokeHeight)+'M'
-    pokemonWeight.innerHTML =zeroLeft(pokeWeight)+'KG'
+    
+    pokemonHeight.innerHTML = divide(pokeHeight)+' M'
+    pokemonWeight.innerHTML = divide(pokeWeight)+' KG'
 
     pokemonSpriteFront.setAttribute('src','#')
     pokemonSpriteFront.src =data['sprites']['versions']['generation-vii']['ultra-sun-ultra-moon']['front_default']
@@ -111,3 +109,4 @@ buttonBack.addEventListener('click', () => {
   }
 });
 renderPokemon(counterPokemon);
+

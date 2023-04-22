@@ -134,19 +134,12 @@ main {
   left: 20%;
   bottom: 120%;
 }
-.pokemon-type1{
-  position: absolute;
-  height: 5%;
-  width: 40%;
-  top: 25%;
-  right: -41%;
-  color: var(--color-pokemon-name);
-}
+
 .pokemon-type2{
   position: absolute;
   height: 5%;
   width: 40%;
-  top: 25%;
+  top: 23%;
   right: -87%;
   color: var(--color-pokemon-name);
 }
@@ -154,7 +147,6 @@ main {
   position: absolute;
   height: 5%;
   width: 40%;
-  
   top: 30%;
   right: -41%;
 }
@@ -180,6 +172,61 @@ main {
   right: -85%;
   
 }
+.pokemon-height{
+  width: 30%;
+  padding: 3%;
+  border: 2px solid var(--shadow-02-button);
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 1rem);
+  color: white;
+  background-color: var(--background-button);
+  box-shadow: -3px 4px 0 var(--shadow-01-button),
+    -5px 7px 0px var(--shadow-02-button);
+
+}
+.pokemon-weight{
+  width: 30%;
+  padding: 3%;
+  border: 2px solid var(--shadow-02-button);
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 1rem);
+  color: white;
+  background-color: var(--background-button);
+  box-shadow: -3px 4px 0 var(--shadow-01-button),
+    -5px 7px 0px var(--shadow-02-button);
+}
+
+.pokemon-type2{
+  width: 30%;
+  padding: 3%;
+  border: 2px solid var(--shadow-02-button);
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 1rem);
+  color: white;
+  background-color: var(--background-button);
+  box-shadow: -3px 4px 0 var(--shadow-01-button),
+    -5px 7px 0px var(--shadow-02-button);
+}
+.pokemon-type1{
+  position: absolute;
+  height: 5%;
+  width: 40%;
+  top: 23%;
+  right: -41%;
+  color: var(--color-pokemon-name);
+}
+.pokemon-type1{
+  width: 30%;
+  padding: 3%;
+  border: 2px solid var(--shadow-02-button);
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 1rem);
+  color: white;
+  background-color: var(--background-button);
+  box-shadow: -3px 4px 0 var(--shadow-01-button),
+    -5px 7px 0px var(--shadow-02-button);
+}
+
 /*@font-face {
     font-family:'pokemon';
     src: url('fonts/pokemon.ttf') format('truetype');        tentando aplicar a fonte de pokemon gba                        
