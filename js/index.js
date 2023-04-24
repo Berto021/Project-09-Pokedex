@@ -48,6 +48,8 @@ const renderPokemon = async pokemon => {
   pokemonSpriteFront.style.display = 'none'
   pokemonSpriteBack.style.display = 'none'
   
+  
+
 
 
   const data = await fetchPokemon(pokemon); 
@@ -57,7 +59,8 @@ const renderPokemon = async pokemon => {
     pokemonHeight.style.display = 'block'
     pokemonWeight.style.display = 'block'
     pokemonType1.style.display = 'block'
-    pokemonType1.innerHTML = data['types']['0']['type']['name'] 
+    const pokeColor = data['types']['0']['type']['name'] 
+    changeColor(pokeColor)
     pokemonName.innerHTML = data.name; 
     pokemonNumber.innerHTML = data.id;
     pokemonImg.setAttribute('src', '#'); 
@@ -68,12 +71,14 @@ const renderPokemon = async pokemon => {
 a
        
     if(data['types']['1'] != undefined){
-       pokemonType2.innerHTML = data['types']['1']['type']['name']
+       const pokecolor2 =data['types']['1']['type']['name']
+       changeColor2(pokecolor2)
        pokemonType2.style.display = 'block'
-   }else  pokemonType2.style.display = 'none'
+   }else pokemonType2.style.display = 'none'
     const pokeHeight = data.height
     const pokeWeight = data.weight
-    
+    pokemonWeight.style.color = 'black'
+    pokemonHeight.style.color = 'black'
     pokemonHeight.innerHTML = divide(pokeHeight)+' M'
     pokemonWeight.innerHTML = divide(pokeWeight)+' KG'
 
@@ -83,13 +88,13 @@ a
     pokemonSpriteBack.src = data['sprites']['versions']['generation-vii']['ultra-sun-ultra-moon']['front_shiny']
 
     counterPokemon = data.id; 
-    pokemonImg.style.bottom = '47%';
+    pokemonImg.style.bottom = '49%';
     pokemonImg.style.height = '18%'; // essa foi a minha maior gambiarra para os sprites não bugarem por conta da imagem de não encontrado
     pokemonImg.style.width = '30%';
     pokemonImg.style.left = '30.43%';
 
     inputSearch.value = ''; 
-  } else {
+  }else {
     pokemonName.innerHTML = `Não encontrado :/`;
     pokemonNumber.innerHTML = ` `;
     pokemonImg.setAttribute('src', 'img/pikachu.gif'); 
