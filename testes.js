@@ -23,7 +23,7 @@ const changeColor = (type) => {
       pokemonType1.style.background = 'dimgray'; //tipo pedra
       pokemonType1.innerHTML = 'Rock';
     } else if (type == 'steel') {
-      pokemonType1.style.background = 'ligthsteelblue'; //tipo ferro
+      pokemonType1.style.background = '#5A8FA1'; //tipo ferro
       pokemonType1.innerHTML = 'Steel';
     } else if (type == 'ice') {
       pokemonType1.style.background = 'cyan'; //tipo gelo
@@ -83,7 +83,7 @@ const changeColor2 = (type) => {
     pokemonType2.style.background = 'dimgray'; //tipo pedra
     pokemonType2.innerHTML = 'Rock';
   } else if (type == 'steel') {
-    pokemonType2.style.background = 'ligthsteelblue'; //tipo ferro
+    pokemonType2.style.background = '#5A8FA1'; //tipo ferro
     pokemonType2.innerHTML = 'Steel';
   } else if (type == 'ice') {
     pokemonType2.style.background = 'cyan'; //tipo gelo
