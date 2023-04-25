@@ -162,14 +162,14 @@ main {
   position: absolute;
   height: 29%;
   width: 40%;
-  top: 40%;
+  top: 44%;
   right: -42%;
 }
 .pokemon-sprite-9-back{
   position: absolute;
   height: 29%;
   width: 40%;
-  top: 40%;
+  top: 44%;
   right: -85%;
   
 }
@@ -243,8 +243,34 @@ h1 {
 @media (min-width: 350px) and (max-width: 650px) {
   main {
     font-family: sans-serif;
+    height: 50%;
+    display: inline-block;
+    margin-top: 2%;
+    padding: 1%;
+    position: relative;
+    margin-left: -50%;
   }
-  .build-team {
-    display: none;
+  .pokemon-img-rigth {
+    position: absolute;
+    width: 100%;
+    left: 98%;
+    height: 96.2%;
   }
+  .pokedex {
+    width: 100%;
+    max-width: 280px;
+  }
+  .pokemon-name{
+    font-size: 80%;
+  } 
+  .pokemon-number{
+    font-size: 80%;
+  }
+  .button-back{
+    font-size: 80%;
+  }
+  .button-next{
+    font-size: 80%;
+  }
+  
 }

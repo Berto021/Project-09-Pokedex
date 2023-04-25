@@ -2,7 +2,7 @@ const pokemonName = document.querySelector('.pokemon-name');
 const pokemonNumber = document.querySelector('.pokemon-number');
 const pokemonImg = document.querySelector('.pokemon-img');
 
-const form = document.querySelector('.form-search');
+const searchForm = document.querySelector('.form-search');
 const inputSearch = document.querySelector('.input-search');
 const buttonNext = document.querySelector('.button-next');
 const buttonBack = document.querySelector('.button-back');
@@ -21,7 +21,7 @@ const pokemonSpriteBack = document.querySelector('.pokemon-sprite-9-back')
 const divide = num => num / 10;
 
 
-var counterPokemon = 1; // essa variável é o contador da pokedex, como tem o valor 1, vai começar pelo pokemon 1, bulbasaur
+var pokemonCounterStarter = 1; // essa variável é o contador da pokedex, como tem o valor 1, vai começar pelo pokemon 1, bulbasaur
 
 const fetchPokemon = async (pokemon) => {
 
@@ -87,9 +87,9 @@ a
     pokemonSpriteBack.setAttribute('src','#')
     pokemonSpriteBack.src = data['sprites']['versions']['generation-vii']['ultra-sun-ultra-moon']['front_shiny']
 
-    counterPokemon = data.id; 
+    pokemonCounterStarter = data.id; 
     pokemonImg.style.bottom = '49%';
-    pokemonImg.style.height = '18%'; // essa foi a minha maior gambiarra para os sprites não bugarem por conta da imagem de não encontrado
+    pokemonImg.style.height = '18%'; // 
     pokemonImg.style.width = '30%';
     pokemonImg.style.left = '30.43%';
 
@@ -108,21 +108,21 @@ a
     inputSearch.value = '';
   }
 };
-form.addEventListener('submit', (event) => {
+searchForm.addEventListener('submit', (event) => {
   event.preventDefault(); 
   renderPokemon(inputSearch.value.toLowerCase()); 
 });
 
 buttonNext.addEventListener('click', () => {
   
-  counterPokemon += 1; 
-  renderPokemon(counterPokemon); 
+  pokemonCounterStarter += 1; 
+  renderPokemon(pokemonCounterStarter); 
 });
 buttonBack.addEventListener('click', () => {
-  if (counterPokemon > 1) {
-    counterPokemon -= 1;
-    renderPokemon(counterPokemon);
+  if (pokemonCounterStarter > 1) {
+    pokemonCounterStarter -= 1;
+    renderPokemon(pokemonCounterStarter);
   }
 });
-renderPokemon(counterPokemon);
+renderPokemon(pokemonCounterStarter);
 
